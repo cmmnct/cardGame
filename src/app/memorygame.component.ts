@@ -8,10 +8,11 @@ import { GameplayService } from './services/gameplay.service';
 
 @Component({
   selector: 'app-memory',
-  templateUrl: './app.component.html'
+  templateUrl: './memorygame.component.html',
+  styleUrls: ['./memorygame.component.css']
 })
 
-export class AppComponent {
+export class MemorygameComponent {
   timerSubscription: Subscription;
   card1: Card;
   card2: Card;
@@ -25,7 +26,6 @@ export class AppComponent {
   boardSizes = {
     sizes: [4, 5, 6]
   };
-  gameTimer: Observable<Number> = timer(2000, 1000);
   clickEnabled: Boolean = true;
 
 
@@ -54,10 +54,11 @@ export class AppComponent {
       this.cardset = data;
       this.numberOfPictures = this.cardset.length / 2;
       this.showFooter = true;
-      this.timerSubscription = this.gameTimer.subscribe(t => this.timerText = this.timerService.updatemyTimer());
-      this.tries = this.gameplayService.tries;
-      this.score = this.gameplayService.score;
-
+      this.timerSubscription = this.gameplayService.gameTimer.subscribe(t => {
+        this.timerText = this.gameplayService.timerText;
+        this.tries = this.gameplayService.tries;
+        this.score = this.gameplayService.score;
+      });
     }));
   }
   onClickCard(card) {

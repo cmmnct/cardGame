@@ -1,0 +1,6 @@
+div[data-role="card"]  {
+    background-size: cover;
+    padding-top:100%;
+    position: relative;
+    background-color: blueviolet;
+   }

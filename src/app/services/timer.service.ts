@@ -16,7 +16,6 @@ hours = 0;
   }
 
   updatemyTimer(): String {
-
     let timerText: String;
 
       this.seconds++;

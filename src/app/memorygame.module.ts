@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
+import { MemorygameComponent } from './memorygame.component';
 import { CardComponent } from './card/card.component';
 
 import {CardService} from './services/card.service';
@@ -16,12 +16,12 @@ import { GameplayService } from './services/gameplay.service';
     HttpClientModule
   ],
   declarations: [
-    AppComponent,
+    MemorygameComponent,
     CardComponent
   ],
   providers: [CardService, SoundService, TimerService, GameplayService],
   bootstrap: [
-    AppComponent
+    MemorygameComponent
   ]
 })
-export class AppModule {}
+export class MemorygameModule {}

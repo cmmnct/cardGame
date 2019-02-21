@@ -40,7 +40,9 @@ export class GameplayService {
     this.step = 0;
     this.timerService.resetTimer();
     this.clickEnabled = true;
-    this.timerSubscription = this.gameTimer.subscribe(t => this.timerText = this.timerService.updatemyTimer());
+    this.timerSubscription = this.gameTimer.subscribe(t => {
+      this.timerText = this.timerService.updatemyTimer();
+    } );
 
   }
 
